@@ -5,18 +5,19 @@ import PageOverall from './components/pageOverall';
 import Sidebar from './components/sidebar';
 import SmoothScroll from './components/SmoothScroll';
 import Homepage from './pages/Homepage';
+import CustomerProfile from './pages/Profile';
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Sidebar />
-
       <Router>
         <SmoothScroll>
+          <Header />
+          <Sidebar />
           <PageOverall>
             <Routes>
               <Route path="/" element={<Homepage />} />
+              <Route path="/profile" element={<CustomerProfile />} />
             </Routes>
           </PageOverall>
         </SmoothScroll>
