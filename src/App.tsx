@@ -1,24 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
+import Header from './components/header';
+import PageOverall from './components/pageOverall';
+import Sidebar from './components/sidebar';
+import SmoothScroll from './components/SmoothScroll';
+import Homepage from './pages/Homepage';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Sidebar />
+
+      <Router>
+        <SmoothScroll>
+          <PageOverall>
+            <Routes>
+              <Route path="/" element={<Homepage />} />
+            </Routes>
+          </PageOverall>
+        </SmoothScroll>
+      </Router>
     </div>
   );
 }
