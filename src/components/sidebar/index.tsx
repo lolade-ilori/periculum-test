@@ -27,8 +27,8 @@ const Sidebar = () => {
                     <NavIcon active={navClicked === 'home' ? true : false} src={home}/>
                 </div>
 
-                <div className="img-wrap" onClick={() => handleNavClicked('profile')}>
-                    <NavIcon active={navClicked === 'profile' ? true : false}  src={doc}/>
+                <div className="img-wrap" onClick={() => handleNavClicked('reports')}>
+                    <NavIcon active={navClicked === 'reports' ? true : false}  src={doc}/>
                 </div>
             </div>
 

@@ -1,5 +1,7 @@
 import React from 'react'
-import { H11, HomeWrap } from './home.styles'
+import DateRangeDropdown from '../../components/dateRangedropdown'
+import DropDown from '../../components/dropdown'
+import { H11, HomeWrap, SubHeaderWrap } from './home.styles'
 
 const Homepage = () => {
   return (
@@ -7,6 +9,11 @@ const Homepage = () => {
         <div className="header-sect">
             <H11>Welcome to your Dashboard</H11>
         </div>
+        
+        <SubHeaderWrap>
+            <DropDown />
+            <DateRangeDropdown />
+        </SubHeaderWrap>
     </HomeWrap>
   )
 }
