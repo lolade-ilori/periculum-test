@@ -44,6 +44,10 @@ export const DropDownBox = styled.div <{dropActive?: boolean}>`
             color: #000;
             font-weight: 700;
             font-size: 16px;
+
+            .customerid-input {
+                
+            }
         }
     }
 `
