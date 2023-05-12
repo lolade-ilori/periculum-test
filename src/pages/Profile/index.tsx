@@ -11,7 +11,9 @@ import Accordion from '../../components/accordion'
 
 const CustomerProfile = () => {
     const [clicked, setClicked] = useState("0")
+    const [dropdownValue, setDropdownValue] = useState<string>('Customers’ Profile')
 
+    
     const overviewList:any = [
         {image: profile, header: 'Total Customers', content: '1.11 million' },
         {image: dollar, header: 'Total Transactional Value', content: '124 Billion' },
@@ -38,7 +40,7 @@ const CustomerProfile = () => {
   return (
     <ProfileWrap>
         <ProfileHeadWrap>
-            <DropDown />
+            <DropDown dropdownValue={dropdownValue} setDropdownValue={setDropdownValue} />
             <DateRangeDropdown />
         </ProfileHeadWrap>
 
@@ -54,6 +56,7 @@ const CustomerProfile = () => {
                                 image={item?.image}
                                 header={item?.header}
                                 content={item?.content}
+                                flex={'33%'}
                             />
                         )
                     })

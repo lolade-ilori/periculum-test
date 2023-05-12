@@ -1,11 +1,16 @@
 import React from 'react'
 import { OverviewCardWrap } from './overviewcard.styles'
 
-const OverviewCard = ({image, header, content}:any) => {
+const OverviewCard = ({image, header, content, flex}:any) => {
   return (
-    <OverviewCardWrap>
+    <OverviewCardWrap flex={flex}>
         <div className="inner-card">
-            <img src={image}/>
+            {
+                image ?
+                <img src={image}/> :
+                <div className="empty-space"></div>
+            }
+            
 
             <div className="card-text-header">
                 {header}
@@ -14,6 +19,11 @@ const OverviewCard = ({image, header, content}:any) => {
             <div className="card-info">
                 {content}
             </div>
+
+            {
+                !image &&
+                <div className="empty-space"></div>
+            }
         </div>
     </OverviewCardWrap>
   )

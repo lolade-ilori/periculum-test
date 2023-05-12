@@ -4,8 +4,8 @@ import {useNavigate } from 'react-router-dom'
 
 import arrowDown from '../../assets/images/svg/arrow-down.svg'
 
-const DropDown = () => {
-    const [dropdownValue, setDropdownValue] = useState<string>('Segmentation Analysis')
+const DropDown = ({dropdownValue, setDropdownValue} :any) => {
+    const [dropdownValue2, setDropdownValue2] = useState<string>(dropdownValue)
     const navigate = useNavigate()
     const [showDropdown, setShowDropdown] = useState<boolean>(false)
 
@@ -15,8 +15,9 @@ const DropDown = () => {
     ]
 
     const handleOptionClick = (item: any) => {
-        setDropdownValue(item.name)
+        setDropdownValue2(item.name)
         navigate(item.page)
+        setDropdownValue(item.name)
     }
 
   return (
